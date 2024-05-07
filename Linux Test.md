@@ -1,3 +1,14 @@
+# Disk Usage
+
+~~~
+percentage=$(df -h /home | awk 'NR==2 {print $5}')
+percentage=${percentage%"%"}
+
+df -h /home | awk 'NR==2 {print "Usage of /home is",$3}'
+
+if $percentage
+~~~
+
 # Backup Log Files
 ~~~
 if ! test -d /backup/logs ; then
