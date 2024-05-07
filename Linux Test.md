@@ -6,7 +6,9 @@ percentage=${percentage%"%"}
 
 df -h /home | awk 'NR==2 {print "Usage of /home is",$3}'
 
-if $percentage
+if [ $percentage -gt 80 ]; then
+  echo "Warning Disk usage is at critical level!"
+fi
 ~~~
 
 # Backup Log Files
